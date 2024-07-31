@@ -1,0 +1,43 @@
+{% extends 'template.html' %} 
+{% block content %}
+
+<h2 class="text-indigo-400 p-4 text-center text-3xl font-bold ">LISTA DE HOSPITALES</h2>
+<div class="booking-form-body bg-gray-900 p-6 rounded-lg shadow-lg">
+    <div class="flex gap-4 mb-6">
+        <a href="/hospital/agregar" class="btn bg-red-700 text-white px-6 py-2 rounded shadow hover:bg-red-600 transition">Agregar</a>
+        <a href="/hospital/grafo_hospital" target="_blank" class="btn bg-red-700 text-white px-6 py-2 rounded shadow hover:bg-red-600 transition">Ver grafo</a>
+        <a href="/hospital/grafo_ver_admin" class="btn bg-red-700 text-white px-6 py-2 rounded shadow hover:bg-red-600 transition">Administrar Grafo</a>
+        <a href="/hospital/caminos" class="btn bg-red-700 text-white px-6 py-2 rounded shadow hover:bg-red-600 transition">Ver caminos</a>
+    </div>
+    <div class="overflow-x-auto">
+        <table id="tabla" class="table-auto text-white w-full bg-gray-800 rounded-lg shadow-lg">
+            <thead class="bg-gray-800 text-gray-300">
+                <tr>
+                    <th class="px-4 py-2">Nro</th>
+                    <th class="px-4 py-2">Nombre</th>
+                    <th class="px-4 py-2">Direccion</th>
+                    <th class="px-4 py-2">Horario</th>
+                    <th class="px-4 py-2">Latitud</th>
+                    <th class="px-4 py-2">Longitud</th>
+                    <th class="px-4 py-2">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in lista %} 
+                    <tr class="bg-gray-700 hover:bg-gray-600 transition">
+                        <td class="border px-4 py-2">1</td>
+                        <td class="border px-4 py-2">{{ item.nombre }}</td>
+                        <td class="border px-4 py-2">{{ item.direccion }}</td>
+                        <td class="border px-4 py-2">{{ item.horario }}</td>
+                        <td class="border px-4 py-2">{{ item.lat }}</td>
+                        <td class="border px-4 py-2">{{ item.lng }}</td>
+                        <td class="border px-4 py-4 text-center">
+                            <a href="/negocio/editar/{{ item.id }}" class="btn bg-blue-500 text-white px-4 py-2 rounded shadow hover:bg-blue-400 transition">Modificar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

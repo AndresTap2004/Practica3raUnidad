@@ -1,0 +1,107 @@
+{% extends 'template.html' %} 
+{% block content %}
+<script>
+  $(document).ready(function () {
+
+    $("#ver_camino").click(function (event) {
+      event.preventDefault();
+      verCamino();
+    });
+
+  });
+
+  const verCamino = () => {
+    let origen = $("#origen").val();
+    let destino = $("#destino").val();
+
+    if (origen == destino) {
+      alert("El origen y el destino deben ser diferentes");
+      return;
+    }
+
+    let url = `/hospital/camino/${origen}/${destino}`;
+    
+    $.ajax({
+      url: url,
+      method: "GET",
+      dataType: "json",
+      success: function(data) {
+        $("#camino_djistra").text(data.camino_corto_djistra);
+        $("#tiempo_djistra").text(`Tiempo: ${data.tiempo_djistra} ns`);
+        $("#camino_floyd").text(data.camino_corto_floyd);
+        $("#tiempo_floyd").text(`Tiempo: ${data.tiempo_floyd} ns`);
+      },
+      error: function(error) {
+        console.error("Error en la solicitud AJAX:", error);
+        alert("No estan todos los nodos conectados.");
+      }
+    });
+  }
+
+</script>
+
+<div class="mb-4">
+  <a href="/hospital" class="btn bg-red-700 text-white px-4 py-2 rounded">Volver</a>
+</div>
+<h2 class="text-indigo-300 p-4 text-center text-2xl font-bold">Ver Recorridos (Floyd y Djistra)</h2>
+<div class="booking-form-body bg-gray-900 p-6 rounded-lg shadow-lg">
+  <div class="flex flex-wrap">
+    <div class="flex flex-col w-full lg:w-2/3 p-2">
+      <div class="card p-4 m-2 text-center bg-gray-800 text-white rounded-lg shadow-md w-full">
+        <div class="card-header mb-4">
+          <h5 class="text-lg font-semibold text-white">Agregar Adyacencia</h5>
+        </div>
+        <div class="card-body">
+          <div class="flex flex-wrap">
+            <div class="w-full lg:w-1/2 px-2 mb-4 lg:mb-0">
+              <label for="origen" class="text-white">ORIGEN</label>
+              <select id="origen" class="bg-gray-700 border-none text-white mt-2 w-full p-2 rounded h-12">
+                {% for item in lista %}
+                <option value="{{item.id}}">{{item.nombre}}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <div class="w-full lg:w-1/2 px-2">
+              <label for="destino" class="text-white">DESTINO</label>
+              <select id="destino" class="bg-gray-700 border-none text-white mt-2 w-full p-2 rounded h-12">
+                {% for item in lista %}
+                <option value="{{item.id}}">{{item.nombre}}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col w-full lg:w-1/3 p-2">
+      <div class="card p-4 m-2 text-center bg-gray-800 text-white rounded-lg shadow-md w-full flex flex-col">
+        <a href="#" id="ver_camino" class="btn bg-blue-500 text-white px-4 py-2 rounded w-full mb-2">Ver camino</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex flex-wrap mt-4">
+    <div class="w-full lg:w-1/2 p-2">
+      <div class="bg-gray-800 text-white p-4 rounded-lg shadow-md">
+        <div class="mb-4">
+          <h3 class="text-lg font-semibold text-white">Camino Djistra</h3>
+        </div>
+        <div id="camino_djistra" class="text-gray-300"></div>
+        <br>
+        <div id="tiempo_djistra" class="text-gray-400"></div>
+      </div>
+    </div>
+    <div class="w-full lg:w-1/2 p-2">
+      <div class="bg-gray-800 text-white p-4 rounded-lg shadow-md">
+        <div class="mb-4">
+          <h3 class="text-lg font-semibold text-white">Camino Floyd</h3>
+        </div>
+        <div id="camino_floyd" class="text-gray-300"></div>
+        <br>
+        <div id="tiempo_floyd" class="text-gray-400"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

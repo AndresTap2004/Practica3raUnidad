@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ESTRUCTURA DE DATOS</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body class="bg-gray-900 text-gray-300">
+
+    <header class="bg-gray-800 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a class="text-white text-xl font-bold" href="#">Estructura de Datos</a>
+            <button class="text-gray-400 lg:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="container mx-auto py-12">
+        <div class="max-w-8xl mx-auto bg-gray-800 p-8 rounded">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl text-white font-bold">PRACTICA 3 - GRAFOS (HOSPITALES)</h2>
+            </div>
+            <div>
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 py-4 text-center">
+        <div class="container mx-auto">
+            <p class="text-gray-400">© 2024 - Andres Francisco Tapia Marquez <a href="https://www.tooplate.com" class="text-gray-400 hover:text-white" target="_blank"> - Pratica Unidad 3</a></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.4.2/dist/cdn.min.js"></script>
+</body>
+</html>

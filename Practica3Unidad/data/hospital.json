@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "nombre": "Hospital Central",
+    "direccion": "Calle de los Medicos",
+    "horario": "24 horas",
+    "lng": "-3.7037902",
+    "lat": "40.4167754"
+  },
+  {
+    "id": 2,
+    "nombre": "Clinica Saludable",
+    "direccion": "Avenida de la Salud",
+    "horario": "08:00 - 20:00",
+    "lng": "-3.6924498",
+    "lat": "40.4238521"
+  },
+  {
+    "id": 3,
+    "nombre": "Hospital San Lucas",
+    "direccion": "Calle San Lucas",
+    "horario": "09:00 - 18:00",
+    "lng": "-3.6995275",
+    "lat": "40.4127155"
+  },
+  {
+    "id": 4,
+    "nombre": "Centro Medico Las Flores",
+    "direccion": "Plaza de las Flores",
+    "horario": "10:00 - 19:30",
+    "lng": "-3.7037168",
+    "lat": "40.4103196"
+  },
+  {
+    "id": 5,
+    "nombre": "Hospital del Sol",
+    "direccion": "Avenida del Sol",
+    "horario": "08:30 - 21:00",
+    "lng": "-3.7028357",
+    "lat": "40.4171832"
+  },
+  {
+    "id": 6,
+    "nombre": "Hospital Santa Maria",
+    "direccion": "Calle de la Paz",
+    "horario": "24 horas",
+    "lng": "-0.08604564386595072",
+    "lat": "51.49977285765781"
+  },
+  {
+    "id": 7,
+    "nombre": "Clinica San Rafael",
+    "direccion": "Avenida de los Angeles",
+    "horario": "08:00 - 20:00",
+    "lng": "-0.10715915638453312",
+    "lat": "51.4950706438692"
+  },
+  {
+    "id": 8,
+    "nombre": "Centro Medico Buenaventura",
+    "direccion": "Plaza del Sol",
+    "horario": "09:00 - 19:00",
+    "lng": "-0.03815267759379682",
+    "lat": "51.52284941705687"
+  },
+  {
+    "id": 9,
+    "nombre": "Hospital La Esperanza",
+    "direccion": "Calle de la Salud",
+    "horario": "24 horas",
+    "lng": "-0.045076178209435554",
+    "lat": "51.475971949758716"
+  },
+  {
+    "id": 10,
+    "nombre": "Clinica San Jose",
+    "direccion": "Avenida de los Pinos",
+    "horario": "07:00 - 21:00",
+    "lng": "-0.17124612565839525",
+    "lat": "51.548191427088796"
+  }
+]
